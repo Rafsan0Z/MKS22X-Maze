@@ -2,9 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Maze{
-  private String[][] ary;
 
   public static void main(String args[]){
+
+          String[][] ary;
           //instead of a try/catch, you can throw the FileNotFoundException.
           //This is generally bad behavior
 
@@ -25,7 +26,7 @@ public class Maze{
           }
           length = counter;
           ary = new String[length][width];
-          for(int i = 0,int j = 0; i < length && j < width; i++, j++){
+          for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
             ary[i][j] = "";
           }
           System.out.println(maze);
