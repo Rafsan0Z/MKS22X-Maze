@@ -8,7 +8,7 @@ public class Maze{
           //instead of a try/catch, you can throw the FileNotFoundException.
           //This is generally bad behavior
 
-          File text = new File("input.txt");
+          File text = new File("Maze1.txt");
           // can be a path like: "/full/path/to/file.txt" or "../data/file.txt"
           String maze = "";
           int counter = 0;
@@ -19,9 +19,11 @@ public class Maze{
 
           while(inf.hasNextLine()){
               String line = inf.nextLine();
+              if(width == 0){width = line.length();}
               maze += line + "\n";
               counter++;
           }
           length = counter;
+          ary = new String[length][width];
       }
 }
