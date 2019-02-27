@@ -6,6 +6,9 @@ public class Maze{
   private char[][]maze;
   private boolean animate;
 
+  public Maze(String filename) throws FileNotFoundException{
+        //COMPLETE CONSTRUCTOR
+    }
 
   public static void main(String args[]){
 
