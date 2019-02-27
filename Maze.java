@@ -26,6 +26,20 @@ public class Maze{
 
 }
 
+public int solve(){
+
+            //find the location of the S.
+
+
+            //erase the S
+
+
+            //and start solving at the location of the s.
+
+            //return solve(???,???);
+
+    }
+
   public static void main(String args[]){
 
           String[][] ary;
