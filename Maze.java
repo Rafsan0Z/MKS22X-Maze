@@ -40,6 +40,24 @@ public int solve(){
 
     }
 
+    private int solve(int row, int col){ //you can add more parameters since this is private
+
+
+        //automatic animation! You are welcome.
+        if(animate){
+
+            clearTerminal();
+            System.out.println(this);
+
+            wait(20);
+        }
+
+        //COMPLETE SOLVE
+
+        return -1; //so it compiles
+    }
+
+
   public static void main(String args[]){
 
           String[][] ary;
