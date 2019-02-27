@@ -25,5 +25,9 @@ public class Maze{
           }
           length = counter;
           ary = new String[length][width];
+          for(int i = 0,int j = 0; i < length && j < width; i++, j++){
+            ary[i][j] = "";
+          }
+          System.out.println(maze);
       }
 }
