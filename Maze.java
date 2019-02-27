@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Maze{
   private String[][] ary;
 
-  public static void main(String args[]) throws FileNotFoundException {
+  public static void main(String args[]){
           //instead of a try/catch, you can throw the FileNotFoundException.
           //This is generally bad behavior
 
