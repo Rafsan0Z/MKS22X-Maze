@@ -21,31 +21,25 @@ public class Maze{
   public void clearTerminal(){
     //erase terminal, go to top left of screen.
     System.out.println("\033[2J\033[1;1H");
-}
+  }
 
-public int solve(){
-  //find the location of the S.
-  //erase the S
-  //and start solving at the location of the s.
-  //return solve(???,???);
-}
+  public int solve(){
+    //find the location of the S.
+    //erase the S
+    //and start solving at the location of the s.
+    //return solve(???,???);
+  }
 
-    private int solve(int row, int col){ //you can add more parameters since this is private
-
-
-        //automatic animation! You are welcome.
-        if(animate){
-
-            clearTerminal();
-            System.out.println(this);
-
-            wait(20);
-        }
-
-        //COMPLETE SOLVE
-
-        return -1; //so it compiles
-    }
+  private int solve(int row, int col){ //you can add more parameters since this is private
+    //automatic animation! You are welcome.
+      if(animate){
+          clearTerminal();
+          System.out.println(this);
+          wait(20);
+      }
+    //COMPLETE SOLVE
+    return -1; //so it compiles
+  }
 
 
   public static void main(String args[]){
