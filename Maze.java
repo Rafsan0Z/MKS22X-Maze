@@ -10,35 +10,25 @@ public class Maze{
         //COMPLETE CONSTRUCTOR
     }
 
-    private void wait(int millis){
-         try {
-             Thread.sleep(millis);
-         }
-         catch (InterruptedException e) {
-         }
-     }
+  private void wait(int millis){
+        try {
+            Thread.sleep(millis);
+        }
+        catch (InterruptedException e) {
+        }
+    }
 
-     public void clearTerminal(){
-
+  public void clearTerminal(){
     //erase terminal, go to top left of screen.
-
     System.out.println("\033[2J\033[1;1H");
-
 }
 
 public int solve(){
-
-            //find the location of the S.
-
-
-            //erase the S
-
-
-            //and start solving at the location of the s.
-
-            //return solve(???,???);
-
-    }
+  //find the location of the S.
+  //erase the S
+  //and start solving at the location of the s.
+  //return solve(???,???);
+}
 
     private int solve(int row, int col){ //you can add more parameters since this is private
 
