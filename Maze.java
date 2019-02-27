@@ -10,6 +10,14 @@ public class Maze{
         //COMPLETE CONSTRUCTOR
     }
 
+    private void wait(int millis){
+         try {
+             Thread.sleep(millis);
+         }
+         catch (InterruptedException e) {
+         }
+     }
+
   public static void main(String args[]){
 
           String[][] ary;
