@@ -43,6 +43,19 @@ public class Maze{
     //return solve(???,???);
   }
 
+  /*
+      Recursive Solve function:
+
+      A solved maze has a path marked with '@' from S to E.
+
+      Returns the number of @ symbols from S to E when the maze is solved,
+      Returns -1 when the maze has no solution.
+
+      Postcondition:
+        The S is replaced with '@' but the 'E' is not.
+        All visited spots that were not part of the solution are changed to '.'
+        All visited spots that are part of the solution are changed to '@'
+    */
   private int solve(int row, int col){ //you can add more parameters since this is private
     //automatic animation! You are welcome.
       if(animate){
