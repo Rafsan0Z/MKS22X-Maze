@@ -90,6 +90,9 @@ public class Maze{
       for(int i = 0; i < moves.length; i++){
         int check = solve(row + moves[i][0], col + moves[i][1], count+1);
         if(check == 0){maze[row][col] = ".";}
+        else{
+          return check;
+        }
       }
     return -1; //so it compiles
   }
