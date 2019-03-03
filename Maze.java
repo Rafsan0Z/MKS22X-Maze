@@ -83,7 +83,7 @@ public class Maze{
           System.out.println(this);
           wait(20);
       }
-    //COMPLETE SOLVE
+      if(maze[row][col] == "E"){return count;}
     return -1; //so it compiles
   }
 
