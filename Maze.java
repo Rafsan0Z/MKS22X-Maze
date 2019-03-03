@@ -60,6 +60,7 @@ public class Maze{
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
       if(maze[i][j] == "S"){return solve(i,j);}
     }
+    return -1;
   }
 
   /*
