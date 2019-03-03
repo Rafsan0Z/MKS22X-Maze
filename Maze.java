@@ -87,6 +87,11 @@ public class Maze{
     return -1; //so it compiles
   }
 
+  public String toString(){
+    String result = "";
+    return result;
+  }
+
 
   public static void main(String args[]){
 
