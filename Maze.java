@@ -83,7 +83,10 @@ public class Maze{
           System.out.println(this);
           wait(20);
       }
-      if(maze[row][col] == "E"){return count;}
+      String tile = maze[row][col];
+      if(tile == "E"){return count;}
+      if(tile == "#"){return -1;}
+      int[][] moves = new int[][] { {1,0} , {-1,0} };
     return -1; //so it compiles
   }
 
