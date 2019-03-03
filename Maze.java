@@ -5,6 +5,8 @@ public class Maze{
 
   private char[][]maze;
   private boolean animate;
+  private int length;
+  private int width;
 
   /*Constructor loads a maze text file, and sets animate to false by default.
       When the file is not found then:
