@@ -24,6 +24,7 @@ public class Maze{
   public Maze(String filename) throws FileNotFoundException{
     Scanner inf = new Scanner(filename);
     int counter = 0;
+    width = 0;
     while(inf.hasNextLine()){
         String line = inf.nextLine();
         if(width == 0){width = line.length();}
@@ -35,6 +36,7 @@ public class Maze{
     for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
       maze[i][j] = "";
     }
+    animate = false;
   }
 
   private void wait(int millis){
