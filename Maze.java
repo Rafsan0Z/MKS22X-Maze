@@ -23,6 +23,7 @@ public class Maze{
     */
   public Maze(String filename) throws FileNotFoundException{
     Scanner inf = new Scanner(filename);
+    String Maze = "";
     int counter = 0;
     width = 0;
     while(inf.hasNextLine()){
@@ -34,7 +35,8 @@ public class Maze{
     length = counter;
     maze = new String[length][width];
     for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
-      maze[i][j] = "";
+      int point = width*i + j;
+      maze[i][j] = Maze.substring(point,point+1);
     }
     animate = false;
   }
