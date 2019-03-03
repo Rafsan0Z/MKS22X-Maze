@@ -20,8 +20,20 @@ public class Maze{
       So you don't have to check for out of bounds!
     */
   public Maze(String filename) throws FileNotFoundException{
-        //COMPLETE CONSTRUCTOR
+    Scanner inf = new Scanner(text);
+    while(inf.hasNextLine()){
+        String line = inf.nextLine();
+        if(width == 0){width = line.length();}
+        Maze += line + "\n";
+        counter++;
     }
+    length = counter;
+    ary = new String[length][width];
+    for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
+      ary[i][j] = "";
+    }
+    System.out.println(Maze);
+  }
 
   private void wait(int millis){
         try {
@@ -83,19 +95,6 @@ public class Maze{
           int width = 0;
           int length = 0;
           //inf stands for the input file
-          Scanner inf = new Scanner(text);
 
-          while(inf.hasNextLine()){
-              String line = inf.nextLine();
-              if(width == 0){width = line.length();}
-              Maze += line + "\n";
-              counter++;
-          }
-          length = counter;
-          ary = new String[length][width];
-          for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
-            ary[i][j] = "";
-          }
-          System.out.println(Maze);
       }
 }
