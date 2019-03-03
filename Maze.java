@@ -87,6 +87,10 @@ public class Maze{
       if(tile == "E"){return count;}
       if(tile == "#"){return -1;}
       int[][] moves = new int[][] { {1,0} , {-1,0} };
+      for(int i = 0; i < moves.length; i++){
+        int check = solve(row + moves[i][0], col + moves[i][1], count+1);
+        if(check == 0){maze[row][col] = ".";}
+      }
     return -1; //so it compiles
   }
 
