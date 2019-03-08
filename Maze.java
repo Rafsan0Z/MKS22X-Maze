@@ -120,15 +120,9 @@ public class Maze{
 
   public static void main(String args[]){
 
-          String[][] ary;
-
-          File text = new File("Maze1.txt");
-          // can be a path like: "/full/path/to/file.txt" or "../data/file.txt"
-          String Maze = "";
-          int counter = 0;
-          int width = 0;
-          int length = 0;
-          //inf stands for the input file
+          Maze puzzle = new Maze(args[0]);
+          int Solution = puzzle.solve();
+          System.out.println(Solution);
 
       }
 }
