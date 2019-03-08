@@ -59,10 +59,15 @@ public class Maze{
       Since the constructor exits when the file is not found or is missing an E or S, we can assume it exists.
     */
   public int solve(){
+    int row = 0;
+    int col = 0
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
-      if(maze[i][j] == "S"){return solve(i,j,1);}
+      if(maze[i][j] == "S"){
+        row = i;
+        col = j;
+      }
     }
-    return -1;
+    return solve(row,col,1);
   }
 
   /*
