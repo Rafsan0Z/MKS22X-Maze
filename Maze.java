@@ -120,9 +120,12 @@ public class Maze{
 
   public static void main(String args[]){
 
+        try{
           Maze puzzle = new Maze(args[0]);
           int Solution = puzzle.solve();
           System.out.println(Solution);
-
+        } catch(FileNotFoundException e){
+          System.out.println("Please Input a valid file!");
+        }
       }
 }
