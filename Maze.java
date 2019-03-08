@@ -97,7 +97,9 @@ public class Maze{
       if(tile == "@"){return -1;}
       int[][] moves = new int[][] { {1,0} , {-1,0}, {0,1}, {0,-1} };
       for(int i = 0; i < moves.length; i++){
-        int check = solve(row + moves[i][0], col + moves[i][1], count+1);
+        int rowChange = row + moves[i][0];
+        int colChange = row + moves[i][1];
+        int check = solve(rowChange, colChange, count+1);
         if(check == 0){maze[row][col] = ".";}
         else{
           return check;
