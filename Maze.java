@@ -38,13 +38,13 @@ public class Maze{
     maze = new char[length][width];
     File Data2 = new File(filename);
     Scanner inf2 = new Scanner(Data2);
-    int i = 0;
+    counter = 0;
     while(inf2.hasNextLine()){
       String line = inf2.nextLine();
-      for(int j = 0; i < length && j < width; j++){
-        maze[i][j] = line.charAt(j);
+      for(int j = 0; counter < length && j < width; j++){
+        maze[counter][j] = line.charAt(j);
       }
-      i++;
+      counter++;
     }
     animate = false;
   }
