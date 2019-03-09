@@ -70,11 +70,13 @@ public class Maze{
     int[] result = new int[2];
     int row = 0;
     int col = 0;
-    for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
+    for(int i = 0; i < length; i++){
+      for(int j = 0; j < width; j++){
       if(maze[i][j] == 'S'){
         row = i;
         col = j;
       }
+    }
     }
     result[0] = row;
     result[1] = col;
@@ -113,11 +115,11 @@ public class Maze{
       int[][] moves = new int[][] { {1,0} , {-1,0}, {0,1}, {0,-1} };
       for(int i = 0; i < moves.length; i++){
         int rowChange = row + moves[i][0];
-        int colChange = row + moves[i][1];
+        int colChange = col + moves[i][1];
+        maze[row][col] = '@';
         int check = solve(rowChange, colChange, count+1);
         if(check == 0){maze[row][col] = '.';}
         else{
-          maze[row][col] = '@';
           return check;
         }
       }
@@ -131,6 +133,10 @@ public class Maze{
 
   public int getWidth(){
     return width;
+  }
+
+  public void setAnimate(boolean command){
+    animate = command;
   }
 
   public String GetMaze(){
@@ -153,6 +159,7 @@ public class Maze{
 
         try{
           Maze puzzle = new Maze(args[0]);
+          puzzle.setAnimate(true);
           int num = puzzle.solve();
           String Solution = puzzle.toString();
           System.out.println(num);
