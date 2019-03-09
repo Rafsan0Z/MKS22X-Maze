@@ -120,6 +120,10 @@ public class Maze{
     return -1; //so it compiles
   }
 
+  public int getWidth(){
+    return width;
+  }
+
   public String GetMaze(){
     return Maze;
   }
@@ -138,8 +142,8 @@ public class Maze{
 
         try{
           Maze puzzle = new Maze(args[0]);
-          String Solution = puzzle.GetMaze();
-          System.out.println(Solution);
+          String Solution = puzzle.toString();
+          System.out.println(puzzle.getWidth());
         } catch(FileNotFoundException e){
           System.out.println("Please Input a valid file!");
         }
