@@ -38,8 +38,13 @@ public class Maze{
     maze = new char[length][width];
     File Data2 = new File(filename);
     Scanner inf2 = new Scanner(Data2);
+    int i = 0;
     while(inf2.hasNextLine()){
-    }
+      String line = inf2.nextLine();
+      for(int j = 0; i < length && j < width; j++){
+        maze[i][j] = line.charAt(j);
+      }
+      i++;
     }
     animate = false;
   }
@@ -133,7 +138,7 @@ public class Maze{
     String result = "";
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
       result += maze[i][j];
-      if(j == width - 1){result += "\n";}
+      if(j == width - 1){result += '\n';}
     }
     return result;
   }
