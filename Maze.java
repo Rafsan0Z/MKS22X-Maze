@@ -33,7 +33,7 @@ public class Maze{
         counter++;
     }
     length = counter;
-    maze = new String[length][width];
+    maze = new char[length][width];
     for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
       int point = width*i + j;
       maze[i][j] = Maze.substring(point,point+1);
@@ -60,7 +60,7 @@ public class Maze{
     */
   public int solve(){
     int row = 0;
-    int col = 0
+    int col = 0;
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
       if(maze[i][j] == "S"){
         row = i;
@@ -100,7 +100,7 @@ public class Maze{
         int rowChange = row + moves[i][0];
         int colChange = row + moves[i][1];
         int check = solve(rowChange, colChange, count+1);
-        if(check < 0){maze[row][col] = ".";}
+        if(check == 0){maze[row][col] = ".";}
         else{
           return check;
         }
@@ -110,7 +110,7 @@ public class Maze{
 
   public String toString(){
     String result = "";
-    for(int i = 0, j == 0; i < length && j < width; i = j+1, j++){
+    for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
       result += maze[i][j];
       if(j == width - 1){result += "\n";}
     }
