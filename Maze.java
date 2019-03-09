@@ -136,9 +136,11 @@ public class Maze{
 
   public String toString(){
     String result = "";
-    for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
-      result += maze[i][j];
-      if(j == width - 1){result += '\n';}
+    for(int i = 0; i < length; i++){
+      for(int j = 0; j < width; j++){
+        result += maze[i][j];
+        if(j == width - 1){result += "\n";}
+      }
     }
     return result;
   }
