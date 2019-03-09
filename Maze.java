@@ -58,16 +58,25 @@ public class Maze{
       Note the helper function has the same name, but different parameters.
       Since the constructor exits when the file is not found or is missing an E or S, we can assume it exists.
     */
-  public int solve(){
+  public int[] findStart(){
+    int[] result = new int[2];
     int row = 0;
     int col = 0;
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
-      if(maze[i][j] == "S"){
+      if(maze[i][j] == 'S'){
         row = i;
         col = j;
       }
     }
-    return solve(row,col,1);
+    result[0] = row;
+    result[1] = col;
+    return result;
+  }
+
+
+  public int solve(){
+    int[] coords = findStart();
+    return solve(coords[0],coords[1],1);
   }
 
   /*
