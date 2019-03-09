@@ -118,7 +118,7 @@ public class Maze{
         int colChange = col + moves[i][1];
         maze[row][col] = '@';
         int check = solve(rowChange, colChange, count+1);
-        if(check == 0){maze[row][col] = '.';}
+        if(check <= 0){maze[row][col] = '.';}
         else{
           return check;
         }
