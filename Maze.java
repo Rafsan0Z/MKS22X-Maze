@@ -7,6 +7,7 @@ public class Maze{
   private boolean animate;
   private int length;
   private int width;
+  private String Maze;
 
   /*Constructor loads a maze text file, and sets animate to false by default.
       When the file is not found then:
@@ -22,14 +23,15 @@ public class Maze{
       So you don't have to check for out of bounds!
     */
   public Maze(String filename) throws FileNotFoundException{
-    Scanner inf = new Scanner(filename);
-    String Maze = "";
+    File Data = new File(filename);
+    Scanner inf = new Scanner(Data);
+    Maze = "";
     int counter = 0;
     width = 0;
     while(inf.hasNextLine()){
         String line = inf.nextLine();
         if(width == 0){width = line.length();}
-        Maze += line;
+        Maze += line + "\n";
         counter++;
     }
     length = counter;
@@ -118,6 +120,10 @@ public class Maze{
     return -1; //so it compiles
   }
 
+  public String GetMaze(){
+    return Maze;
+  }
+
   public String toString(){
     String result = "";
     for(int i = 0, j = 0; i < length && j < width; i = j+1, j++){
@@ -132,7 +138,7 @@ public class Maze{
 
         try{
           Maze puzzle = new Maze(args[0]);
-          String Solution = puzzle.toString();
+          String Solution = puzzle.GetMaze();
           System.out.println(Solution);
         } catch(FileNotFoundException e){
           System.out.println("Please Input a valid file!");
