@@ -25,7 +25,6 @@ public class Maze{
   public Maze(String filename) throws FileNotFoundException{
     File Data = new File(filename);
     Scanner inf = new Scanner(Data);
-    Scanner inf2 = new Scanner(Data);
     Maze = "";
     int counter = 0;
     width = 0;
@@ -37,9 +36,11 @@ public class Maze{
     }
     length = counter;
     maze = new char[length][width];
+    File Data2 = new File(filename);
+    Scanner inf2 = new Scanner(Data2);
+    counter = 0;
     while(inf2.hasNextLine()){
       String line = inf2.nextLine();
-      counter = 0;
       for(int i = 0; i < line.length(); i++){
         maze[counter][i] = line.charAt(i);
       }
