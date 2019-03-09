@@ -29,14 +29,14 @@ public class Maze{
     while(inf.hasNextLine()){
         String line = inf.nextLine();
         if(width == 0){width = line.length();}
-        Maze += line + "\n";
+        Maze += line;
         counter++;
     }
     length = counter;
     maze = new char[length][width];
     for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
       int point = width*i + j;
-      maze[i][j] = Maze.substring(point,point+1);
+      maze[i][j] = Maze.charAt(point);
     }
     animate = false;
   }
@@ -76,7 +76,7 @@ public class Maze{
 
   public int solve(){
     int[] coords = findStart();
-    return solve(coords[0],coords[1],1);
+    return solve(coords[0],coords[1],0);
   }
 
   /*
@@ -132,7 +132,7 @@ public class Maze{
 
         try{
           Maze puzzle = new Maze(args[0]);
-          int Solution = puzzle.solve();
+          String Solution = puzzle.toString();
           System.out.println(Solution);
         } catch(FileNotFoundException e){
           System.out.println("Please Input a valid file!");
