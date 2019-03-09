@@ -109,9 +109,6 @@ public class Maze{
       }
       char tile = maze[row][col];
       if(tile == 'E'){return count;}
-      if(tile == '#'){return -1;}
-      if(tile == '.'){return -1;}
-      if(tile == '@'){return -1;}
       int[][] moves = new int[][] { {1,0} , {-1,0}, {0,1}, {0,-1} };
       for(int i = 0; i < moves.length; i++){
         int rowChange = row + moves[i][0];
@@ -124,6 +121,11 @@ public class Maze{
         }
       }
     return -1; //so it compiles
+  }
+
+  public boolean Obstruction(char tile){
+    if(tile == '#' || tile == '.' || tile == '@'){return true;}
+    return false;
   }
 
   public int getWidth(){
@@ -150,6 +152,7 @@ public class Maze{
 
         try{
           Maze puzzle = new Maze(args[0]);
+          int num = puzzle.solve();
           String Solution = puzzle.toString();
           System.out.println(Solution);
         } catch(FileNotFoundException e){
