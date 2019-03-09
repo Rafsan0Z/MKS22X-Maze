@@ -25,6 +25,7 @@ public class Maze{
   public Maze(String filename) throws FileNotFoundException{
     File Data = new File(filename);
     Scanner inf = new Scanner(Data);
+    Scanner inf2 = new Scanner(Data);
     Maze = "";
     int counter = 0;
     width = 0;
@@ -36,9 +37,13 @@ public class Maze{
     }
     length = counter;
     maze = new char[length][width];
-    for(int i = 0,j = 0; i < length && j < width; i = j + 1, j++){
-      int point = width*i + j;
-      maze[i][j] = Maze.charAt(point);
+    while(inf2.hasNextLine()){
+      String line = inf2.nextLine();
+      counter = 0;
+      for(int i = 0; i < line.length(); i++){
+        maze[counter][i] = line.charAt(i);
+      }
+      counter++;
     }
     animate = false;
   }
@@ -143,7 +148,7 @@ public class Maze{
         try{
           Maze puzzle = new Maze(args[0]);
           String Solution = puzzle.toString();
-          System.out.println(puzzle.getWidth());
+          System.out.println(Solution);
         } catch(FileNotFoundException e){
           System.out.println("Please Input a valid file!");
         }
