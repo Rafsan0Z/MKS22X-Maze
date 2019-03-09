@@ -111,6 +111,7 @@ public class Maze{
         int check = solve(rowChange, colChange, count+1);
         if(check == 0){maze[row][col] = '.';}
         else{
+          maze[row][col] = '@';
           return check;
         }
       }
