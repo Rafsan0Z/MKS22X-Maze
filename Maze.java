@@ -8,6 +8,7 @@ public class Maze{
   private int length;
   private int width;
   private String Maze;
+  private int[] coords;
 
   /*Constructor loads a maze text file, and sets animate to false by default.
       When the file is not found then:
@@ -70,14 +71,17 @@ public class Maze{
     int[] result = new int[2];
     int row = 0;
     int col = 0;
+    int counter = 0;
     for(int i = 0; i < length; i++){
       for(int j = 0; j < width; j++){
       if(maze[i][j] == 'S'){
         row = i;
         col = j;
+        counter++;
       }
     }
     }
+    if(counter > 2){throw new IllegalStateException();}
     result[0] = row;
     result[1] = col;
     return result;
