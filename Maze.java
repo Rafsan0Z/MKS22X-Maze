@@ -47,6 +47,13 @@ public class Maze{
       }
       counter++;
     }
+    try{
+      int[] result = findStart();
+      coords[0] = result[0];
+      coords[1] = result[1];
+    }catch(IllegalArgumentException e){
+      System.out.println("There are more than 1 starting points");
+    }
     animate = false;
   }
 
@@ -89,7 +96,6 @@ public class Maze{
 
 
   public int solve(){
-    int[] coords = findStart();
     return solve(coords[0],coords[1],0);
   }
 
