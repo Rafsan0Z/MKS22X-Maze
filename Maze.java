@@ -49,6 +49,7 @@ public class Maze{
     }
     try{
       int[] result = findStart();
+      coords = new int[2];
       coords[0] = result[0];
       coords[1] = result[1];
     }catch(IllegalArgumentException e){
@@ -173,6 +174,7 @@ public class Maze{
           int num = puzzle.solve();
           String Solution = puzzle.toString();
           System.out.println(num);
+          System.out.println(puzzle);
         } catch(FileNotFoundException e){
           System.out.println("Please Input a valid file!");
         }
